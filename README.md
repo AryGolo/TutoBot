@@ -1,0 +1,2 @@
+# TutoBot
+TutoBot vous apprenant gratuitement à vous servir de certains logiciels. Vous souhaitez débuter dans le montage ? Pas de problème : TutoBot vous apprend à vous servir de Sony Vegas par exemple. Bien que Vegas soit sali par sa réputation (il crash souvent), le tuto vous apprendra à limiter ces crash et à rendre ce logiciel utilisable.  Cependant certains préféreront Adobe Premier pour monter leurs vidéos, et bien attendez la suite du développement de ce bot et vous pourrez apprendre facilement et gratuitement à vous servir de Adobe Premier. 
