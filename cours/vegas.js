@@ -9,9 +9,9 @@ const { createHash } = require("crypto");
 const { error } = require("console");
 client.commands = new Discord.Collection(); 
 const caca = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-const pref = caca["prefix"]
+const pref = caca["prefix"];
 const neezay = JSON.parse(fs.readFileSync("./token.json", "utf8"));
-const token = neezay["token"]
+const token = neezay["token"];
 client.login(token);
 
 
@@ -40,12 +40,12 @@ if(message.content.startsWith(pref+"V1")) {
 const content = JSON.parse(fs.readFileSync("./vegas.json", "utf8"));
 if(message.content.startsWith(pref+"V2")) {
     const v2 = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setDescription(content["p2"])
-    .setFooter(client.user.username, client.user.displayAvatarURL())
-    .setThumbnail("https://media.discordapp.net/attachments/711657325869400116/736180709680611328/600px-Vegas_Pro_15.png")
-    .setTimestamp();
- message.channel.send(v2);
+        .setColor("RANDOM")
+        .setDescription(content["p2"])
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setThumbnail("https://media.discordapp.net/attachments/711657325869400116/736180709680611328/600px-Vegas_Pro_15.png")
+        .setTimestamp();
+     message.channel.send(v2);
 }
 
 
@@ -68,13 +68,12 @@ if(message.content.startsWith(pref+"V3")) {
 
     if(message.content.startsWith(pref+"V6")) {
         const content = JSON.parse(fs.readFileSync("./vegas.json", "utf8"));
-    message.channel.send(content["p6"]);
+        message.channel.send(content["p6"]);
     }
-    })
+});
 
 
 
-
-    client.on("ready", () => {
-        console.log("vegas.js a démarré [cours]")
-    });
+client.on("ready", () => {
+        console.log("vegas.js a démarré [cours]");
+});
