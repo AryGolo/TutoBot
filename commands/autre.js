@@ -7,15 +7,11 @@ const moment = require('moment');
 const fetch = require('node-fetch');
 client.commands = new Discord.Collection(); 
 const caca = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-const pref = caca["prefix"]
+const pref = caca["prefix"];
 const neezay = JSON.parse(fs.readFileSync("./token.json", "utf8"));
-const token = neezay["token"]
+const token = neezay["token"];
 client.login(token);
 
-
-
-
-
 client.on("ready", () => {
-    console.log("autre.js a démarré")
+    console.log("autre.js a démarré");
 });
