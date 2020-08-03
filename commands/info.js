@@ -7,15 +7,14 @@ const moment = require('moment');
 const fetch = require('node-fetch');
 client.commands = new Discord.Collection(); 
 const caca = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-const pref = caca["prefix"]
+const pref = caca["prefix"];
 const neezay = JSON.parse(fs.readFileSync("./token.json", "utf8"));
-const token = neezay["token"]
+const token = neezay["token"];
 client.login(token);
 
         
 client.on("message", message => {
     if(message.content.startsWith(pref+"info")) {
-        var cpuInfo, ramInfo, os, msgID;
         const discordVersion = require("discord.js/package.json").version;
         
         if(message.author.bot) return;
@@ -23,15 +22,14 @@ client.on("message", message => {
         
         const info = new Discord.MessageEmbed()
     
-        .setTitle("Info sur **TutoBot**")
-        .setDescription("Version Discord.js : **"+ discordVersion+"**\nAllumé depuis : **"+ moment.duration(client.uptime).humanize()+"**")
-        .setColor("RANDOM")
-        .setTimestamp()
-        .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setTitle("Info sur **TutoBot**")
+            .setDescription("Version Discord.js : **"+ discordVersion+"**\nAllumé depuis : **"+ moment.duration(client.uptime).humanize()+"**")
+            .setColor("RANDOM")
+            .setTimestamp()
+            .setFooter(client.user.username, client.user.displayAvatarURL())
  
         let lol = JSON.parse(fs.readFileSync("./crea.json", "utf8"));
         if (message.author.id in lol) return message.channel.send(info);
-
     }
 });
 
