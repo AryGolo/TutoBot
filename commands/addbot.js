@@ -7,9 +7,9 @@ const moment = require('moment');
 const fetch = require('node-fetch');
 client.commands = new Discord.Collection(); 
 const caca = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-const pref = caca["prefix"]
+const pref = caca["prefix"];
 const neezay = JSON.parse(fs.readFileSync("./token.json", "utf8"));
-const token = neezay["token"]
+const token = neezay["token"];
 client.login(token);
 
 
@@ -17,15 +17,13 @@ client.on("message", message => {
     if(message.content.startsWith(pref+"add-bot")) {
         let zizpointcom = string = message.content.split(" ").slice(1).join(" ");
         const invit = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setDescription(`Click [ici](https://discord.com/oauth2/authorize?client_id=${zizpointcom}&scope=bot&permissions=8) pour inviter <@${zizpointcom}> !`)
+            .setFooter(client.user.username, client.user.displayAvatarURL())
 
-        .setColor("RANDOM")
-        .setDescription(`Click [ici](https://discord.com/oauth2/authorize?client_id=${zizpointcom}&scope=bot&permissions=8) pour inviter <@${zizpointcom}> !`)
-        .setFooter(client.user.username, client.user.displayAvatarURL())
-
-        message.channel.send(invit)
-        }
-      });
-
+        message.channel.send(invit);
+    }
+});
 
     
 client.on("ready", () => {
