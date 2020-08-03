@@ -18,8 +18,11 @@ const talkedRecently = new Set();
 client.on('message', message => {
     if (message.content.startsWith(pref+'report')) {   
         let anta = message.content.split(" ").slice(1).join(" ");
+    }
+
     if (message.content.includes("@")) return;
     if (message.guild.name.includes("@")) return message.channel.send("**Le nom de votre serveur contient un `@`, veuillez le retirer pour envoyer des messages au staff de TutoBot.**")
+  
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
 
@@ -45,7 +48,9 @@ client.on('message', message => {
     }
 }); 
 
-talkedRecently.add(message.author.id); setTimeout(() => {  talkedRecently.delete(message.author.id);        
+talkedRecently.add(message.author.id); 
+setTimeout(() => {  
+    talkedRecently.delete(message.author.id);        
 }, 600000); 
 
 client.on("ready", () => {
